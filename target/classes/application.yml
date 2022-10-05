@@ -1,0 +1,46 @@
+server:
+  port: 8181
+
+spring:
+
+  application:
+    name: SENTRIFUGO
+  mail:
+
+    host: smtp.gmail.com
+    port: 587
+    username: mohammedjaff1999@gmail.com
+    password:  oaqkxhulbjavawsu
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.gmail.com
+          auth: true
+          starttls:
+            enable: true
+
+  datasource:
+    url: jdbc:postgresql://ec2-44-205-64-253.compute-1.amazonaws.com:5432/d20lncv2cgpjr1
+    username: ktdpbhvrusqmoo
+    password: 07b6e06507baf70b475c930deb4083ea0eb9795d8c2e3ea5f5051dc07fc51e37
+    driver-class-name:
+
+#    url: jdbc:mysql://localhost:3306/Places
+#    username: root
+#    password: 1234
+#    driver-class-name: com.mysql.jdbc.Driver
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+    show-sql: true
+
+
+
