@@ -1,8 +1,5 @@
 server:
   port: 8181
-app:
-  sendgrid:
-    key: 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
 
 spring:
 
@@ -15,19 +12,12 @@ spring:
     password: 07b6e06507baf70b475c930deb4083ea0eb9795d8c2e3ea5f5051dc07fc51e37
     driver-class-name:
 
-#    url: jdbc:mysql://localhost:3306/Places
-#    username: root
-#    password: 1234
-#    driver-class-name: com.mysql.jdbc.Driver
-
-
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-#        dialect: org.hibernate.dialect.MySQL5Dialect
         format_sql: true
     show-sql: true
 

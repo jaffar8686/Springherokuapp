@@ -2,14 +2,14 @@ package com.example.heroku.controller;
 
 
 import com.example.heroku.model.EmployeeDetails;
+import com.example.heroku.model.SchedulerData;
 import com.example.heroku.service.EmployeeDetailsService;
-import com.example.heroku.service.SendGridEmail;
+import com.example.heroku.service.SchedulerDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -21,7 +21,7 @@ public class EmployeeDetailsController {
     private EmployeeDetailsService employeeDetailsService;
 
     @Autowired
-    private SendGridEmail sendGridEmail;
+    private SchedulerDataService schedulerDataService;
 
     @GetMapping("/get/all")
     public List<EmployeeDetails> getAllEmployeeDetails(){
@@ -84,6 +84,11 @@ public class EmployeeDetailsController {
     public ResponseEntity<String> updateByEmployeeId(@RequestBody EmployeeDetails details, @PathVariable("id") Long id){
         String message = employeeDetailsService.updateByEmployeeId(details,id);
         return new ResponseEntity<>(message,HttpStatus.OK);
+    }
+
+    @GetMapping("/scheduler/data")
+    public List<SchedulerData> getAllSchedulerData(){
+        return schedulerDataService.getAllSchedulerData();
     }
 
 
