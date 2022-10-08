@@ -1,6 +1,5 @@
 server:
   port: 8181
-
 app:
   sendgrid:
     key: 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
