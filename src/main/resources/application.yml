@@ -4,7 +4,7 @@ server:
 spring:
 
   application:
-    name: SENTRIFUGO
+    name: EMPLOYEE
 
   datasource:
     url: jdbc:postgresql://ec2-44-205-64-253.compute-1.amazonaws.com:5432/d20lncv2cgpjr1
@@ -15,6 +15,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

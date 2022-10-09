@@ -106,8 +106,99 @@ public class TaskScheduling {
 
     }
 
+    // Asia/Kolkata
+    @Scheduled(cron = "0 0 12 ? * SUN",zone="Asia/Kolkata")
+    public void runEveryWeekendAtSundayAsia() throws IOException {
+        String EVERY_SUNDAY_OF_THE_MONTH = "Every Sunday Of The Month At 12.00 AM Asia/Kolkata";
+        schedulerDataService.saveSchedulerDetails(EVERY_SUNDAY_OF_THE_MONTH);
+
+    }
 
 
+    @Scheduled(cron="0 0 12 * * *",zone="Asia/Kolkata")
+    public void runEveryDayAt12PMAsia() throws IOException {
+        String EVERY_DAY_12PM = "Every Day At 12.00 PM Asia/Kolkata";
+        schedulerDataService.saveSchedulerDetails(EVERY_DAY_12PM);
+
+    }
+
+    // Every end of the month at 5.00 PM
+    @Scheduled(cron = "0 0 17 L * *",zone="Asia/Kolkata")
+    public void runEveryEndOfTheMonthAsia() throws IOException {
+        String EVERY_END_OF_THE_MONT_AT_5PM = "Every End Of The Month At 5.00 PM Asia/Kolkata";
+        schedulerDataService.saveSchedulerDetails(EVERY_END_OF_THE_MONT_AT_5PM);
+
+    }
+
+    @Scheduled(cron = "0 0 0 1 JAN *",zone="Asia/Kolkata")
+    public void runAtEvery1stJanuaryAsia() throws IOException {
+        String EVERY_1ST_JANUARY = "Every 1st Of January At 12.00 AM Asia/Kolkata";
+        schedulerDataService.saveSchedulerDetails(EVERY_1ST_JANUARY);
+
+    }
+
+    @Scheduled(cron = "0 0 0 1 JUL *",zone="Asia/Kolkata")
+    public void runAtEvery1stJulyAsia() throws IOException {
+        String EVERY_1ST_JULY = "Every 1st Of July At 12.00 AM Asia/Kolkata";
+        schedulerDataService.saveSchedulerDetails(EVERY_1ST_JULY);
+
+    }
+
+    @Scheduled(cron = "0 0 0 1 JAN * ",zone="Asia/Kolkata")
+    public void runEveryEndOfTheYearAsia() throws IOException {
+        String EVERY_END_OF_THE_YEAR = "Every End Of The Year At 12.00 AM Asia/Kolkata";
+        schedulerDataService.saveSchedulerDetails(EVERY_END_OF_THE_YEAR);
+
+
+    }
+
+
+    //GMT+5:30
+
+    @Scheduled(cron = "0 0 12 ? * SUN",zone="GMT+5:30")
+    public void runEveryWeekendAtSundayGMT() throws IOException {
+        String EVERY_SUNDAY_OF_THE_MONTH = "Every Sunday Of The Month At 12.00 AM GMT+5:30";
+        schedulerDataService.saveSchedulerDetails(EVERY_SUNDAY_OF_THE_MONTH);
+
+    }
+
+
+    @Scheduled(cron="0 0 12 * * *",zone="GMT+5:30")
+    public void runEveryDayAt12PMGMT() throws IOException {
+        String EVERY_DAY_12PM = "Every Day At 12.00 PM GMT+5:30";
+        schedulerDataService.saveSchedulerDetails(EVERY_DAY_12PM);
+
+    }
+
+    // Every end of the month at 5.00 PM
+    @Scheduled(cron = "0 0 17 L * *",zone="GMT+5:30")
+    public void runEveryEndOfTheMonthGMT() throws IOException {
+        String EVERY_END_OF_THE_MONT_AT_5PM = "Every End Of The Month At 5.00 PM GMT+5:30";
+        schedulerDataService.saveSchedulerDetails(EVERY_END_OF_THE_MONT_AT_5PM);
+
+    }
+
+    @Scheduled(cron = "0 0 0 1 JAN *",zone="GMT+5:30")
+    public void runAtEvery1stJanuaryGMT() throws IOException {
+        String EVERY_1ST_JANUARY = "Every 1st Of January At 12.00 AM GMT+5:30";
+        schedulerDataService.saveSchedulerDetails(EVERY_1ST_JANUARY);
+
+    }
+
+    @Scheduled(cron = "0 0 0 1 JUL *",zone="GMT+5:30")
+    public void runAtEvery1stJulyGMT() throws IOException {
+        String EVERY_1ST_JULY = "Every 1st Of July At 12.00 AM GMT+5:30";
+        schedulerDataService.saveSchedulerDetails(EVERY_1ST_JULY);
+
+    }
+
+    @Scheduled(cron = "0 0 0 1 JAN * ",zone="GMT+5:30")
+    public void runEveryEndOfTheYearGMT() throws IOException {
+        String EVERY_END_OF_THE_YEAR = "Every End Of The Year At 12.00 AM GMT+5:30";
+        schedulerDataService.saveSchedulerDetails(EVERY_END_OF_THE_YEAR);
+
+
+    }
 
 
 
