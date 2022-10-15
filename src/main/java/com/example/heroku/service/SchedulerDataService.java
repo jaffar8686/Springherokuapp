@@ -37,4 +37,8 @@ public class SchedulerDataService {
     public List<SchedulerData> getAllSchedulerData(){
         return schedulerDataRepository.findAll();
     }
+
+    public void deleteAllData() {
+        schedulerDataRepository.deleteAll();
+    }
 }

@@ -1,11 +1,15 @@
 package com.example.heroku.service;
 
 
+import com.example.heroku.model.SchedulerData;
+import com.example.heroku.repository.SchedulerDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.time.LocalDateTime;
 
 
 @Service
@@ -14,6 +18,8 @@ public class TaskScheduling {
     @Autowired
     private SchedulerDataService schedulerDataService;
 
+    @Autowired
+    private SchedulerDataRepository schedulerDataRepository;
 
     @Scheduled(cron="0 0 12 * * *",zone = "IST")
     public void runEveryDayAt12PM() throws IOException {
@@ -200,6 +206,29 @@ public class TaskScheduling {
 
     }
 
+   @Scheduled(cron = "0 0 7 * * *",zone = "UTC")
+    public void runScheduler1230ByUTC(){
+           DateFormat DFormat = DateFormat.getDateInstance();
+           String every_day_at_12_30_PM = "Running Every Day At 12.30PM /07:00 (24 hr)In UTC";
+           SchedulerData data = new SchedulerData();
+           data.setScheduledType(every_day_at_12_30_PM);
+           data.setLocalDateTime(LocalDateTime.now());
+           data.setLocalDateTimeWithZoneId(DFormat.getTimeZone().getDisplayName());
+           schedulerDataRepository.save(data);
+
+   }
+
+    @Scheduled(cron = "0 0 12 * * *",zone = "UTC")
+    public void runScheduler530ByUTC(){
+        DateFormat DFormat = DateFormat.getDateInstance();
+        String every_day_at_5_30_PM = "Running Every Day At 5:30PM /12:00 (24 hr)In UTC";
+        SchedulerData data = new SchedulerData();
+        data.setScheduledType(every_day_at_5_30_PM);
+        data.setLocalDateTime(LocalDateTime.now());
+        data.setLocalDateTimeWithZoneId(DFormat.getTimeZone().getDisplayName());
+        schedulerDataRepository.save(data);
+
+    }
 
 
 }

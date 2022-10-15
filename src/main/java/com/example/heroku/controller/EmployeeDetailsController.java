@@ -91,6 +91,12 @@ public class EmployeeDetailsController {
         return schedulerDataService.getAllSchedulerData();
     }
 
+    @DeleteMapping("/scheduler/data/delete/all")
+    public void deleteAllSchedulerData(){
+        schedulerDataService.deleteAllData();
+    }
+
+
     @GetMapping("/hello")
     public void checkEqualsObject(){
        employeeDetailsService.checkEqualsEmployeeObject();
