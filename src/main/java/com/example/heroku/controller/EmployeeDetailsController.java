@@ -91,5 +91,10 @@ public class EmployeeDetailsController {
         return schedulerDataService.getAllSchedulerData();
     }
 
+    @GetMapping("/hello")
+    public void checkEqualsObject(){
+       employeeDetailsService.checkEqualsEmployeeObject();
+    }
+
 
 }

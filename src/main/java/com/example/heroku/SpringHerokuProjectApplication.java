@@ -1,5 +1,7 @@
 package com.example.heroku;
 
+import com.example.heroku.model.SchedulerData;
+import com.example.heroku.repository.SchedulerDataRepository;
 import com.example.heroku.service.SchedulerDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -21,6 +23,8 @@ import java.util.Date;
 @SpringBootApplication
 public class SpringHerokuProjectApplication {
 
+	@Autowired
+	private SchedulerDataRepository schedulerDataRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringHerokuProjectApplication.class, args);
@@ -33,6 +37,12 @@ public class SpringHerokuProjectApplication {
 		String str = DFormat.format(new Date());
 		System.out.println(DFormat.getTimeZone().getDisplayName());
 
+		SchedulerData data = new SchedulerData();
+		data.setScheduledType("Running Every Start Of Application");
+		data.setLocalDateTime(LocalDateTime.now());
+		data.setLocalDateTimeWithZoneId(DFormat.getTimeZone().getDisplayName());
+		schedulerDataRepository.save(data);
+
 		//Setting Timezone
 		DateTimeFormatter formatTodayWithZoneId = DateTimeFormatter.ofPattern("MM/dd/yy hh:mm:ss Z");
 		LocalDateTime today = LocalDateTime.now();
@@ -40,6 +50,8 @@ public class SpringHerokuProjectApplication {
 		ZonedDateTime todayWithTimeZone = ZonedDateTime.of(today,zone);
 		String formattedDate = todayWithTimeZone.format(formatTodayWithZoneId);
 		System.out.println("Formatted date with time zone "+ " "+todayWithTimeZone.format(formatTodayWithZoneId));
+
+
 
 	}
 

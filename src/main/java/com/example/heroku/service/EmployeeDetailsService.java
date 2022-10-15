@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 @Service
 public class EmployeeDetailsService {
@@ -198,6 +197,24 @@ public class EmployeeDetailsService {
         }catch(Exception e){
             throw new AlreadyExist("No Employee Data Exists");
         }
+
+    }
+
+    public void checkEqualsEmployeeObject(){
+
+        EmployeeDetails details = new EmployeeDetails();
+        details.setId(1L);
+        details.setEmployeeName("Jaffar");
+
+        EmployeeDetails details1 = new EmployeeDetails();
+        details1.setId(1L);
+        details1.setEmployeeName("Jaffar");
+        Set<EmployeeDetails> sets = new LinkedHashSet<>();
+        sets.add(details);
+        sets.add(details1);
+
+        System.out.println(sets);
+
 
     }
 }
